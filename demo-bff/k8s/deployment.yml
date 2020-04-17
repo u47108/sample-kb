@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: custommvc-deployment
+  labels:
+      app: custommvc
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: custommvc-service
+    spec:
+      containers:
+      - name: custommvc-service
+        image: ehms/custommvc
+        ports:
+        - containerPort: 8080
