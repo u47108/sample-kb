@@ -1,0 +1,45 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: demo-bff
+spec:
+  selector:
+    app: demo-bff
+    tier: backend
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8081
+    nodePort: 30500
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-bff
+spec:
+  selector:
+      matchLabels:
+        app: demo-bff
+        tier: backend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: demo-bff
+        tier: backend
+    spec:
+      containers:
+        - name: demo-bff
+          image: demo-bff:latest
+          args: [
+            "--http_port=8081",
+            "--backend=127.0.0.1:8080",
+            "--service=demo-bff.endpoints.demoCluster",
+            "--rollout_strategy=managed",
+             "--cors_allow_methods=GET,POST,PUT,OPTIONS",
+            "--cors_allow_headers=Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers, x-api-key"
+            ]
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8081
