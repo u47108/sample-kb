@@ -28,3 +28,15 @@ hs_err_pid*
 /settings
 .classpath
 /.settings
+demo-bff/.classpath
+demo-bff/.project
+demo-be/.attach_pid108362
+demo-be/.attach_pid127063
+demo-be/.attach_pid128137
+demo-be/.attach_pid131946
+demo-be/.attach_pid147517
+demo-be/.attach_pid176137
+demo-bff/.attach_pid51476
+demo-bff/.attach_pid57140
+demo-bff/.sts4-cache/
+
