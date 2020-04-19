@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-bee
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-be
+  template:
+    metadata:
+      labels:
+        app: demo-be
+      annotations:
+        prometheus.io/scrape: 'true'
+    spec:
+      containers:
+      - name: demo-be
+        image: spring-boot-hpa
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: COMUNAS_ENDPOINT
+          value: "https://midastest.minsal.cl/farmacias/maps/index.php/utilidades/maps_obtener_comunas_por_regiones"
+        - name: COMUNAS_PARAM_NAME
+          value: "reg_id"
+        - name: COMUNAS_PARAM_VALUE
+          value: "7"
+        - name: FARMACIAS_ENDPOINT
+          value: "https://farmanet.minsal.cl/maps/index.php/ws/getLocalesRegion?id_region=7"
+        - name: WS_BE_TIMEOUT
+          value: "25000"
+        ports:
+          - containerPort: 8080
+        resources:
+          limits:
+            memory: 256Mi
