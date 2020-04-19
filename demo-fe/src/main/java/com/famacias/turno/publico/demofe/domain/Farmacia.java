@@ -1,4 +1,4 @@
-package com.famacias.turno.publico.demo.domain.be;
+package com.famacias.turno.publico.demofe.domain;
 
 import java.io.Serializable;
 

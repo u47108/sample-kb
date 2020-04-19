@@ -2,7 +2,7 @@
  * demo-bff
  * 2020
  */
-package com.famacias.turno.publico.demo.domain.be;
+package com.famacias.turno.publico.demofe.domain;
 
 import java.io.Serializable;
 
