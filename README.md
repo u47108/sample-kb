@@ -49,4 +49,4 @@ curl $(minikube ip):${NodePort}
 e.g. curl http://192.168.99.100:30658
 
 ```
-
+![GCP Diagrama](https://github.com/u47108/sample-kb/blob/master/Demogcp.png) 
