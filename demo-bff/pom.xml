@@ -7,7 +7,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.0.3.RELEASE</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.famacias.turno.publico</groupId>
 	<artifactId>demo-bff</artifactId>
@@ -88,13 +88,13 @@
 		<dependency>
 			<groupId>com.google.api-client</groupId>
 			<artifactId>google-api-client</artifactId>
-			<version>1.28.0</version>
+			<version>1.31.2</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.auth0</groupId>
 			<artifactId>java-jwt</artifactId>
-			<version>3.8.0</version>
+			<version>4.5.0</version>
 		</dependency>
 		<dependency>
 			<groupId>io.springfox</groupId>
